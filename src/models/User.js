@@ -3,6 +3,8 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
+const JWT_KEY = "NewAuduxAPP2021"
+
 const userSchema = mongoose.Schema({
     name: {
         type: String,
@@ -45,7 +47,8 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.generateAuthToken = async function() {
     // Generate an auth token for the user
     const user = this
-    const token = jwt.sign({_id: user._id}, process.env.JWT_KEY)
+    const token = jwt.sign({_id: user._id}, JWT_KEY)
+    console.log(token, "this is token")
     user.tokens = user.tokens.concat({token})
     await user.save()
     return token

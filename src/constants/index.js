@@ -1,0 +1,1 @@
+exports.JWT_KEY = "thisisaudux2021"

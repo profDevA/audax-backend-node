@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
+const JWT_KEY = 'NewAuduxAPP2021'
 
 const auth = async(req, res, next) => {
     const token = req.header('Authorization').replace('Bearer ', '')
 
     try {
-        const data = jwt.verify(token, process.env.JWT_KEY)
+        const data = jwt.verify(token, JWT_KEY)
         const user = await User.findOne({ _id: data._id, 'tokens.token': token })
 
         if (!user) {
