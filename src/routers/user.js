@@ -20,7 +20,7 @@ router.post('/users/register', async (req, res) => {
         }
 
     } catch (error) {
-        res.status(400).send({ error: true, errorMessage: error.errmsg })
+        res.status(400).send({ error: true, errorMessage: error })
     }
 })
 
