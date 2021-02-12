@@ -5,6 +5,7 @@ const auth = require('../middleware/auth')
 const router = express.Router()
 
 router.post('/users/register', async (req, res) => {
+    console.log("Regster request")
     // Create a new user
     try {
         const exist = await User.findOne({ "email": req.body.email });
@@ -24,6 +25,7 @@ router.post('/users/register', async (req, res) => {
 })
 
 router.post('/users/login', async (req, res) => {
+    console.log("Login request")
     //Login a registered user
     try {
         const { email, password } = req.body
@@ -45,6 +47,7 @@ router.get('/users/me', auth, async (req, res) => {
 })
 
 router.post('/users/logout', auth, async (req, res) => {
+    console.log("logout request")
     // Log user out of the application
     try {
         req.user.tokens = req.user.tokens.filter((token) => {
