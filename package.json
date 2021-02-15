@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "env-cmd -f ./.env nodemon src/app.js"
+    "start": "nodemon src/app.js"
   },
   "author": "Frank Atukunda",
   "license": "MIT",
@@ -18,10 +18,10 @@
     "mongodb": "^3.2.7",
     "mongoose": "^5.7.5",
     "morgan": "^1.10.0",
+    "request": "^2.88.2",
     "validator": "^11.0.0"
   },
   "devDependencies": {
-    "env-cmd": "^9.0.3",
     "nodemon": "^1.19.1"
   }
 }

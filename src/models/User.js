@@ -2,8 +2,9 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const CONSTANTS = require('../constants')
 
-const JWT_KEY = "NewAuduxAPP2021"
+const JWT_KEY = CONSTANTS.JWT_KEY
 
 const userSchema = mongoose.Schema({
     name: {

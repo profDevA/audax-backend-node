@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
-const JWT_KEY = 'NewAuduxAPP2021'
+const CONSTANTS = require('../constants')
+const JWT_KEY = CONSTANTS.JWT_KEY
 
 const auth = async(req, res, next) => {
     const token = req.header('Authorization').replace('Bearer ', '')
