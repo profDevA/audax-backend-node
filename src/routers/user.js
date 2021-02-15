@@ -144,4 +144,8 @@ router.get('/zoomlogin', function (req, res, next) {
 
 router.post('/zoom/get_token',auth,  zoomController.getAccessToken);
 
+router.get('test', (req, res) => {
+    res.send('OK server is working!')
+})
+
 module.exports = router
